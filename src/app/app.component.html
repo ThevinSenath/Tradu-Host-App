@@ -1,13 +1,11 @@
 <div class="container">
-  <button type="button" class="btn btn-primary styled-button" (click)="loadIframe()">Load Iframe</button>
-
-  <ng-container *ngIf="showIframe">
-    <iframe 
-      class="iframe-container styled-iframe" 
-      [src]="iframeUrl" 
-      frameBorder="0" 
-      scrolling="no">
-      Alternative text
-    </iframe>
-  </ng-container>
+  <app-side-menu (loadIframe)="loadIframe()"></app-side-menu>
+  <div class="content">
+    <div *ngIf="!showIframe" class="placeholder">
+      <div class="d-flex flex-1 justify-content-center flex-column align-items-center">
+        <img src="assets/images/client-logo-light.png" alt="Client Logo" class="mb-5 client-logo">
+      </div>
+    </div>
+    <iframe *ngIf="showIframe" [src]="iframeUrl"></iframe>
+  </div>
 </div>
