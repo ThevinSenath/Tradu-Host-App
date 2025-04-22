@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   public loadIframe() {
-    const url = "https://tradu-qa.globaltradingnetwork.com/initiate-sso";
+    const url = "https://tradu-qa.globaltradingnetwork.com/shared-remote-resources/initiate-sso/initiate-sso.html";
     this.iframeUrl = this._sanitizer.bypassSecurityTrustResourceUrl(url);
     this.showIframe = true;
   }
